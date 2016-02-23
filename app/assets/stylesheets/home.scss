@@ -1,3 +1,33 @@
 // Place all the styles related to the home controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+
+.index {
+  background-color: $primary-color;
+  height: 100vh;
+  border: 1px solid transparent;
+  box-sizing: border-box;
+  text-align: center;
+  position: relative;
+
+  .placeCenter {
+    position: absolute;
+    top: 30%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+    #login-trigger {
+      background-color: $dark-color;
+      color: $light-color;
+    }
+  }
+
+  .downNav {
+    position: absolute;
+    bottom: 10%;
+    left: 50%;
+    transform: translateY(-50%);
+    transform: translateX(-50%);
+
+  }
+}
