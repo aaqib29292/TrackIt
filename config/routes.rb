@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  get 'home/land'
+  
 
   resources :tasks, except: [:show]
 

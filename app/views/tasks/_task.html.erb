@@ -1,0 +1,17 @@
+<li>
+  <%= task.title %>
+  (
+  <%= link_to("Start", task_path(task, status: Task::Status::IN_PROGRESS), method: :patch) if task.not_started? %>
+
+  <%= link_to("Finished", task_path(task, status: Task::Status::FINISHED), method: :patch) if task.in_progress? %>
+
+  <!-- <% if task.in_progress? %>
+  |
+  <% end %> -->
+  <%= content_tag(:span, "|") if task.in_progress? %>
+
+  <%= link_to("Shelf", task_path(task, status: Task::Status::NOT_STARTED), method: :patch) if task.in_progress? || task.finished? %>
+
+
+  )
+</li>
