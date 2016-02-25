@@ -1,0 +1,2 @@
+$('li#<%= dom_id(@task) %>').remove();
+$('ul#tasks_<%= @task.status %>').append('<%= escape_javascript render(@task) %>');

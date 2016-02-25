@@ -1,16 +1,18 @@
+<%= link_to "Add New Task", new_task_path, class: "btn btn-primary pull-right" %>
+
 <h1>Tasks</h1>
 
 <h2>Not Started</h2>
-<ul>
+<ul id="tasks_<%= Task::Status::NOT_STARTED %>">
   <%= render @not_started_tasks %>
 </ul>
 
 <h2>In Progress</h2>
-<ul>
+<ul id="tasks_<%= Task::Status::IN_PROGRESS %>">
   <%= render @in_progress_tasks %>
 </ul>
 
 <h2>Finished</h2>
-<ul>
+<ul id="tasks_<%= Task::Status::FINISHED %>">
   <%= render @finished_tasks %>
 </ul>
