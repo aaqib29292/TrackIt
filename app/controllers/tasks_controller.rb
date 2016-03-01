@@ -10,13 +10,12 @@
 #
 
 class TasksController < ApplicationController
+  before_action :authenticate_user!
+
   def index
     @not_started_tasks = Task.where(status: Task::Status::NOT_STARTED)
     @in_progress_tasks = Task.where(status: Task::Status::IN_PROGRESS)
     @finished_tasks = Task.where(status: Task::Status::FINISHED)
-
-    flash.now[:notice] = "Error!!!"
-    
   end
 
   def new
