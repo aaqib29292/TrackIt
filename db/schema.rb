@@ -11,7 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20160301185205) do
+ActiveRecord::Schema.define(version: 20160302202530) do
+
+  create_table "task_shares", force: :cascade do |t|
+    t.integer  "user_id"
+    t.integer  "task_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
+
+  add_index "task_shares", ["task_id"], name: "index_task_shares_on_task_id"
+  add_index "task_shares", ["user_id"], name: "index_task_shares_on_user_id"
 
   create_table "tasks", force: :cascade do |t|
     t.string   "title"
