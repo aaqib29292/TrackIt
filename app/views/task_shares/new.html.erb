@@ -1,5 +1,6 @@
 <h1>Share "<%= @task.title %>" with: </h1>
 <%= simple_form_for @task_share do |f| %>
- <%= f.input :email %>
- <%= f.submit "Share" %>
+  <%= f.input :email %>
+  <%= f.input :task_id, as: :hidden %>
+  <%= f.submit "Share" %>
 <% end %>

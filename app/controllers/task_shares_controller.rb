@@ -14,6 +14,9 @@ class TaskSharesController < ApplicationController
     if @task_share.save
       redirect_to tasks_path
     else
+      @task = Task.find(params[:task_share][:task_id])
+      @task_share.email = params[:task_share][:email]
+      flash.now[:danger] = @task_share.errors.full_messages.join(". ")
       render :new
     end
   end

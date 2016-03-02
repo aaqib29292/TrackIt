@@ -16,3 +16,11 @@
 <ul id="tasks_<%= Task::Status::FINISHED %>">
   <%= render @finished_tasks %>
 </ul>
+
+
+<h1>Tasks Shared With Me</h1>
+<ul>
+  <% @shared_tasks.each do |task| %>
+    <li><%= task.title %></li>
+  <% end %>
+</ul>

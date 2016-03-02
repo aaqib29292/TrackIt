@@ -24,6 +24,8 @@ class TasksController < ApplicationController
     # Task::Status::NOT_STARTED takes NOT_STARTED value from Status module from task.rb
 
     # Task stands for all de tasks whereas current_user.tasks stands for only individual user tasks
+
+    @shared_tasks = current_user.shared_tasks
   end
 
   def new
