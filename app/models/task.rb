@@ -18,7 +18,7 @@ class Task < ActiveRecord::Base
 
   belongs_to :user
 
-  validates :title, presence: true, uniqueness: true
+  validates :title, presence: true
 
   def not_started?
     self.status == Status::NOT_STARTED
