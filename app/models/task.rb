@@ -16,6 +16,8 @@ class Task < ActiveRecord::Base
     FINISHED = 2
   end
 
+  belongs_to :user
+
   validates :title, presence: true, uniqueness: true
 
   def not_started?
