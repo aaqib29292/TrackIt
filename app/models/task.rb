@@ -17,7 +17,7 @@ class Task < ActiveRecord::Base
   end
 
   belongs_to :user
-
+  has_many :task_shares
   validates :title, presence: true
 
   def not_started?
